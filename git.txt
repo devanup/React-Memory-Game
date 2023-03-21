@@ -7,14 +7,13 @@ git remote add origin https://github.com/...
 # create the main branch if it doesn't exist
 git checkout -b main
 
-# pull the latest changes from the remote repository
-git pull origin main
-
-
-# delete the master branch if it exists
-git branch -d master
-
 # push your local changes to the remote repository
 git add .
 git commit -m "Initial commit"
-git push -u origin main
+git push origin main
+
+# pull the latest changes from the remote repository
+git pull origin main
+
+# delete the master branch if it exists
+git branch -d master
