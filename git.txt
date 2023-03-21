@@ -1,0 +1,19 @@
+# initialize a new Git repository
+git init
+
+# add the remote GitHub repository as a new remote
+git remote add origin https://github.com/...
+
+# pull the latest changes from the remote repository
+git pull origin main
+
+# switch to the main branch
+git checkout main
+
+# delete the master branch
+git branch -d master
+
+# push your local changes to the remote repository
+git add .
+git commit -m "Initial commit"
+git push -u origin main
