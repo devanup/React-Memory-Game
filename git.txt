@@ -4,13 +4,14 @@ git init
 # add the remote GitHub repository as a new remote
 git remote add origin https://github.com/...
 
+# create the main branch if it doesn't exist
+git checkout -b main
+
 # pull the latest changes from the remote repository
 git pull origin main
 
-# switch to the main branch
-git checkout main
 
-# delete the master branch
+# delete the master branch if it exists
 git branch -d master
 
 # push your local changes to the remote repository
