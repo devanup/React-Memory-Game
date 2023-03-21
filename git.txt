@@ -17,3 +17,21 @@ git pull origin main
 
 # delete the master branch if it exists
 git branch -d master
+
+
+When react creates the app inside a directory we created
+we need to copy the files from that app directory to the 
+directory we created.
+
+cd my-app
+cp -r . ..
+cd ..
+rm -rf my-app
+
+After this we need to clear the npm cache & reinstall npm
+
+npm cache clean --force
+rm -rf node_modules
+npm install
+npm start
+
