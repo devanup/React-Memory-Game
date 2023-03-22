@@ -2,7 +2,7 @@
 
 Demo: https://react-memory-game-devanup.vercel.app/
 
-<img src="/src/assets/screenshot.png" width="50%" height="50%">
+<img src="/src/assets/screenshot.png" width="200px" height="200px">
 
 # Getting Started with Create React App
 
