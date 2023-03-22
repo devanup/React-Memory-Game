@@ -95,6 +95,10 @@ README.md: This file typically contains documentation or instructions for runnin
 node_modules/: This directory contains all of the dependencies that your app requires, as installed by NPM or Yarn.
 
 
+# Install Font Awesome package:
+npm install --save @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
 
-
+# Import the necessary icons and components in your App.js file:
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog, faSun, faMoon, faVolumeHigh, faVolumeMute } from '@fortawesome/free-solid-svg-icons';
 
