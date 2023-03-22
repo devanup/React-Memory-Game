@@ -1,4 +1,4 @@
-// import React from 'react';
+import { useState } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -46,11 +46,23 @@ const Grid = () => {
 		'😭',
 	];
 
+	const [flippedCards, setFlippedCards] = useState([]);
+
+	const handleClick = (index) => {
+		setFlippedCards((prevFlippedCards) =>
+			prevFlippedCards.includes(index)
+				? prevFlippedCards.filter((i) => i !== index)
+				: [...prevFlippedCards, index],
+		);
+	};
+
 	return (
 		<div className='grid'>
 			{cards.map((card, index) => (
-				<div key={index} className='card'>
-					<div className='content'>{card}</div>
+				<div key={index} className='card' onClick={() => handleClick(index)}>
+					<div className='content'>
+						{flippedCards.includes(index) ? card : null}
+					</div>
 				</div>
 			))}
 		</div>
