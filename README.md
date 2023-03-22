@@ -1,6 +1,6 @@
 # **REACT MEMORY GAME**
 
-Demo: (https://react-memory-game-devanup.vercel.app/){:target="\_blank"}
+<a href="https://react-memory-game-devanup.vercel.app/" target="_blank">Demo</a>
 
 <img src="/src/assets/screenshot.png" width="100%" height="80%">
 
