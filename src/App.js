@@ -20,7 +20,7 @@ const Header = () => (
 					<button className='newgame-btn'>New Game</button>
 				</td>
 				<td rowSpan='2'>
-					<div className='moves'>20 moves</div>
+					<div className='moves'>0 moves</div>
 					<div className='timer' id='timer'>
 						00:00:00
 					</div>
