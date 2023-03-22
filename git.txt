@@ -17,3 +17,84 @@ git pull origin main
 
 # delete the master branch if it exists
 git branch -d master
+
+
+When react creates the app inside a directory we created
+we need to copy the files from that app directory to the 
+directory we created.
+
+cd my-app
+cp -r . ..
+cd ..
+rm -rf my-app
+
+After this we need to clear the npm cache & reinstall npm
+
+npm cache clean --force
+rm -rf node_modules
+npm install
+npm start
+
+
+
+# React structure
+
+my-react-app/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── assets/
+│   │   ├── images/
+│   │   └── styles/
+│   ├── components/
+│   │   ├── common/
+│   │   ├── layout/
+│   │   └── views/
+│   ├── services/
+│   ├── utils/
+│   ├── App.js
+│   ├── index.js
+│   └── setupTests.js
+├── package.json
+├── README.md
+├── .gitignore
+└── node_modules/
+Let's go through each directory and file in more detail:
+
+public/: This directory contains the public-facing files of your application. It typically includes an index.html file that serves as the entry point for your app, and any static assets such as images, fonts, or favicons.
+
+src/: This directory contains the source code for your application. It's where you'll write most of your code.
+
+assets/: This directory contains any assets that are used in your app, such as images, stylesheets, or fonts.
+
+components/: This directory contains all of your React components. It's typically organized into subdirectories based on the type of component.
+
+common/: This directory contains components that are reused throughout the app, such as buttons or form fields.
+
+layout/: This directory contains components that define the overall layout of your app, such as a header or footer.
+
+views/: This directory contains components that represent different views or pages in your app, such as a home page or a product detail page.
+
+services/: This directory contains any services or APIs that your app uses to retrieve data or interact with external systems.
+
+utils/: This directory contains any utility functions or modules that are used throughout your app.
+
+App.js: This file is the root component of your app. It typically defines the overall layout and routing of your app.
+
+index.js: This file is the entry point for your app. It typically renders the App component and mounts it to the DOM.
+
+setupTests.js: This file is used to set up any test-related configurations or dependencies.
+
+package.json: This file contains information about your app, such as its name, version, and dependencies.
+
+README.md: This file typically contains documentation or instructions for running and contributing to your app.
+
+.gitignore: This file lists any files or directories that should be ignored by Git, such as the node_modules directory.
+
+node_modules/: This directory contains all of the dependencies that your app requires, as installed by NPM or Yarn.
+
+
+
+
+
