@@ -27,7 +27,7 @@ cd my-app
 cp -r . ..
 cd ..
 rm -rf my-app
-
+rm -rf
 After this we need to clear the npm cache & reinstall npm
 
 npm cache clean --force
