@@ -19,6 +19,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 3000;
   /* background-color: #333; */
 }
 
@@ -309,17 +310,6 @@ margin-left: 50px;
     opacity: 0;
   }
 }
-.overlay{
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-}
-.overlay-blur{
-  top: 0;
-  left: 0;
-  /* background-color: #d5bff2; */
-  backdrop-filter: blur(7px);
-}
 .modal{
   opacity: 0;
   z-index: -1000;
@@ -349,9 +339,10 @@ margin-left: 50px;
   font-family: 'Orbitron', sans-serif;
   opacity: .7;
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-top: 50px;
   margin-bottom: 50px;
+  font-weight: bold;
 }
 .showModal{
   transition: opacity ease .3s;
@@ -377,7 +368,7 @@ margin-left: 50px;
   width: 180px;
   background-color: #ffb342;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   cursor: pointer;
   margin-left: 0;
   margin-right: 0;

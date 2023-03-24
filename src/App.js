@@ -156,7 +156,7 @@ const Header = ({ gridRef, moves }) => {
 
 	return (
 		<header>
-			<a href='#' className='logo' id='logo'>
+			<a href='/' className='logo' id='logo'>
 				Match 'Em
 			</a>
 			<table>
@@ -185,10 +185,6 @@ const Modal = ({ moves, allMatched, gridRef }) => {
 	// console.log(`All matched?: ${allMatched}`);
 	return (
 		<>
-			<div
-				className={`overlay ${allMatched === true ? 'overlay-blur' : ''}`}
-			></div>
-			;
 			<div className={`modal ${allMatched === true ? 'showModal' : ''}`}>
 				<span role='img' aria-label='celerbate'>
 					🥳
