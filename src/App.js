@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-	faCog,
 	faSun,
 	faMoon,
-	faVolumeHigh,
 	faVolumeMute,
 	faVolumeUp,
 } from '@fortawesome/free-solid-svg-icons';
@@ -158,7 +156,7 @@ const Header = ({ gridRef, moves }) => {
 
 	return (
 		<header>
-			<a href='#' className='logo' id='logo'>
+			<a href='/' className='logo' id='logo'>
 				Match 'Em
 			</a>
 			<table>
@@ -179,19 +177,25 @@ const Header = ({ gridRef, moves }) => {
 	);
 };
 
-const Modal = ({ moves, allMatched }) => {
+const Modal = ({ moves, allMatched, gridRef }) => {
+	const handleClick = () => {
+		gridRef.current.startNewGame(); // Calls the startNewGame method of the Grid component
+	};
 	// console.log(`${moves} moves`);
 	// console.log(`All matched?: ${allMatched}`);
 	return (
-		<div className={`modal ${allMatched === true ? 'showModal' : ''}`}>
-			<span role='img' aria-label='celerbate'>
-				🥳
-			</span>
-			<div className='modal-wrap'>
-				<h1>You've matched 'em all!</h1>
-				<p>{`${moves} ${moves > 1 ? 'moves' : 'move'}`}</p>
+		<>
+			<div className={`modal ${allMatched === true ? 'showModal' : ''}`}>
+				<span role='img' aria-label='celerbate'>
+					🥳
+				</span>
+				<div className='modal-wrap'>
+					<h1>You've matched 'em all!</h1>
+					<p>{`${moves} ${moves > 1 ? 'moves' : 'move'}`}</p>
+					<NewGameButton onClick={handleClick} />
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 
@@ -208,19 +212,47 @@ const Credit = () => (
 	</div>
 );
 
-const Settings = () => (
-	<div className='theme-toggle' id='theme-toggle'>
-		<div className='active-bg' id='active-bg'></div>
-		<div className='light-icon active' id='light-icon'>
-			{/* <i className='fas fa-sun'></i> */}
-			<FontAwesomeIcon icon={faSun} className='fas fa-sun' />
+const Settings = () => {
+	useEffect(() => {
+		const lightIcon = document.getElementById('light-icon');
+		const darkIcon = document.getElementById('dark-icon');
+		const themeToggle = document.getElementById('theme-toggle');
+		const activeBg = document.getElementById('active-bg');
+
+		function toggleDarkMode() {
+			if (lightIcon.classList.contains('active')) {
+				activeBg.style.marginLeft = '50px';
+				lightIcon.style.color = '#cbcbcb';
+				darkIcon.style.color = '#000';
+				document.querySelector('body').classList.add('dark-active');
+			} else {
+				activeBg.style.marginLeft = '0px';
+				lightIcon.style.color = '#cbcbcb';
+				darkIcon.style.color = '#000';
+				document.querySelector('body').classList.remove('dark-active');
+			}
+			lightIcon.classList.toggle('active');
+		}
+
+		themeToggle.addEventListener('click', toggleDarkMode);
+
+		return () => {
+			themeToggle.removeEventListener('click', toggleDarkMode);
+		};
+	}, []);
+
+	return (
+		<div className='theme-toggle' id='theme-toggle'>
+			<div className='active-bg' id='active-bg'></div>
+			<div className='light-icon active' id='light-icon'>
+				<FontAwesomeIcon icon={faSun} className='fas fa-sun' />
+			</div>
+			<div className='dark-icon' id='dark-icon'>
+				<FontAwesomeIcon icon={faMoon} className='fas fa-moon' />
+			</div>
 		</div>
-		<div className='dark-icon' id='dark-icon'>
-			{/* <i className='fas fa-moon'></i> */}
-			<FontAwesomeIcon icon={faMoon} className='fas fa-moon' />
-		</div>
-	</div>
-);
+	);
+};
 
 const SoundButton = () => {
 	const [soundEnabled, setSoundEnabled] = useState(true);
@@ -276,7 +308,7 @@ function App() {
 				/>
 				<Credit />
 				<Settings />
-				<Modal moves={moves} allMatched={allMatched} />
+				<Modal moves={moves} allMatched={allMatched} gridRef={gridRef} />
 				{/* <SoundButton
 					soundEnabled={soundEnabled}
 					setSoundEnabled={setSoundEnabled}
