@@ -220,13 +220,6 @@ margin-left: 50px;
 /* Menu/Settings */
 /* Settings */
 
-#theme-toggle-wrap{
-    opacity: 0;
-    position: absolute;
-    /* top: 200px; */
-    transform: translateY(100%);
-    transition: ease .1s;
-}
 
 #theme-toggle-wrap.iconShow{
     opacity: 1;
@@ -259,6 +252,7 @@ margin-left: 50px;
     bottom: 50px;
     right: 50px;
     cursor: pointer;
+    z-index: 1;
     /* bottom: 40px; */
 }
 
@@ -315,7 +309,17 @@ margin-left: 50px;
     opacity: 0;
   }
 }
-
+.overlay{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+.overlay-blur{
+  top: 0;
+  left: 0;
+  /* background-color: #d5bff2; */
+  backdrop-filter: blur(7px);
+}
 .modal{
   opacity: 0;
   z-index: -1000;
@@ -324,7 +328,8 @@ margin-left: 50px;
   text-align: center;
   height: 500px;
   width: 700px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, .5);
+  backdrop-filter: blur(8px);
   border-radius: 2rem;
   padding: 20px;
   /* font-family: 'Tilt Warp', cursive; */

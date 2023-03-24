@@ -184,16 +184,22 @@ const Modal = ({ moves, allMatched, gridRef }) => {
 	// console.log(`${moves} moves`);
 	// console.log(`All matched?: ${allMatched}`);
 	return (
-		<div className={`modal ${allMatched === true ? 'showModal' : ''}`}>
-			<span role='img' aria-label='celerbate'>
-				🥳
-			</span>
-			<div className='modal-wrap'>
-				<h1>You've matched 'em all!</h1>
-				<p>{`${moves} ${moves > 1 ? 'moves' : 'move'}`}</p>
-				<NewGameButton onClick={handleClick} />
+		<>
+			<div
+				className={`overlay ${allMatched === true ? 'overlay-blur' : ''}`}
+			></div>
+			;
+			<div className={`modal ${allMatched === true ? 'showModal' : ''}`}>
+				<span role='img' aria-label='celerbate'>
+					🥳
+				</span>
+				<div className='modal-wrap'>
+					<h1>You've matched 'em all!</h1>
+					<p>{`${moves} ${moves > 1 ? 'moves' : 'move'}`}</p>
+					<NewGameButton onClick={handleClick} />
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 
