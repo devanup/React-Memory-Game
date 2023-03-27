@@ -1,6 +1,6 @@
 # **REACT MEMORY GAME**
 
-Demo: https://react-memory-game-devanup.vercel.app/
+Demo: https://devanup.github.io/React-Memory-Game/
 
 <img src="/src/assets/screenshot.png" width="100%" height="80%">
 
