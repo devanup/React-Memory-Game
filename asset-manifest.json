@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/React-Memory-Game/static/css/main.7b45d4b0.css",
+    "main.js": "/React-Memory-Game/static/js/main.5f212c63.js",
+    "static/media/card-match.mp3": "/React-Memory-Game/static/media/card-match.f7ffc91e4d867458bd77.mp3",
+    "static/media/win-sound.mp3": "/React-Memory-Game/static/media/win-sound.6f7f7c499ecf01d49bc5.mp3",
+    "static/media/card-flip.mp3": "/React-Memory-Game/static/media/card-flip.03607c244b893a42d2ac.mp3",
+    "index.html": "/React-Memory-Game/index.html",
+    "main.7b45d4b0.css.map": "/React-Memory-Game/static/css/main.7b45d4b0.css.map",
+    "main.5f212c63.js.map": "/React-Memory-Game/static/js/main.5f212c63.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b45d4b0.css",
+    "static/js/main.5f212c63.js"
+  ]
+}
