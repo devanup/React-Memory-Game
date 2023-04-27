@@ -60,7 +60,6 @@ my-react-app/
 ├── README.md
 ├── .gitignore
 └── node_modules/
-Let's go through each directory and file in more detail:
 
 public/: This directory contains the public-facing files of your application. It typically includes an index.html file that serves as the entry point for your app, and any static assets such as images, fonts, or favicons.
 
